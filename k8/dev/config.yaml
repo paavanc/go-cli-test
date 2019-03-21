@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  tz: America/New_York
+kind: ConfigMap
+metadata:
+  name: go-cli-config
+  namespace: default

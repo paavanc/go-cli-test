@@ -1,0 +1,26 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: go-cli-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: go-cli-prompt
+              image: #need to know
+              imagePullPolicy: Always
+              env:
+                - name: TZ
+                  valueFrom:
+                    configMapKeyRef:
+                      name: blockparty-cli-config
+                      key: tz
+              command: ["./app", "event_toggle"]
+              resources:
+                requests:
+                  cpu: 500m
+                  memory: 1000Mi
+          restartPolicy: Never
