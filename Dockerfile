@@ -4,8 +4,8 @@ RUN go version
 RUN apk update && apk upgrade && \
     apk add --no-cache bash git openssh
 RUN apk add build-base
-RUN mkdir -p /go/src/go-cli-starter
-WORKDIR /go/src/go-cli-starter
+RUN mkdir -p /go/src/go-cli-test
+WORKDIR /go/src/go-cli-test
 COPY . .
 
 RUN set -x && \
@@ -23,7 +23,7 @@ RUN apk --no-cache add ca-certificates
 
 
 WORKDIR /root/
-COPY --from=builder /go/src/go-cli-starter/app .
+COPY --from=builder /go/src/go-cli-test/app .
 RUN apk --no-cache add tzdata
 RUN chmod +x app
 

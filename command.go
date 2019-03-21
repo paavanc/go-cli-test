@@ -5,8 +5,8 @@ import (
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
-	"go-cli-starter/manager"
-	"go-cli-starter/utils"
+	"go-cli-test/manager"
+	"go-cli-test/utils"
 )
 
 var rootCmd = &cobra.Command{

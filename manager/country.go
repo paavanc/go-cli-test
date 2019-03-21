@@ -2,8 +2,8 @@ package manager
 
 import (
 	"fmt"
-	"go-cli-starter/constants"
-	"go-cli-starter/utils"
+	"go-cli-test/constants"
+	"go-cli-test/utils"
 	"net/http"
 )
 
